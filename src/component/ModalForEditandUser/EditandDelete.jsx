@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const EditandDelete = ({ contactData, setShowModal, updateContact }) => {
+const EditandDelete = ({ contactData, setShowModal, updateContact,deleteContact }) => {
     const [formData, setFormData] = useState({ ...contactData });
 
     const handleInputChange = (e) => {
@@ -20,6 +20,13 @@ const EditandDelete = ({ contactData, setShowModal, updateContact }) => {
     const handleClose = () => {
         setShowModal(false); // Close the modal
     };
+    const handleDelete = () => {
+        if (window.confirm(`Are you sure you want to delete ${contactData.name}?`)) {
+            deleteContact(contactData.id); // Delete contact by its ID
+            setShowModal(false); // Close the modal
+        }
+    };
+
 
     return (
         <div className="modal fade show" id="editModal" tabIndex="-1" aria-labelledby="exampleModalLabel" style={{ display: 'block', animation: 'fadeIn 0.5s ease-in-out' }} aria-hidden="true">
@@ -60,6 +67,7 @@ const EditandDelete = ({ contactData, setShowModal, updateContact }) => {
                     <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" onClick={handleClose}>Close</button>
                         <button type="button" className="btn btn-primary" onClick={handleSave}>Save changes</button>
+                        <button type="button" className="btn btn-primary" onClick={handleDelete}>Save changes</button>
                     </div>
                 </div>
             </div>

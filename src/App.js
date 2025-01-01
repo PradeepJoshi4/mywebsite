@@ -22,9 +22,14 @@ function App() {
   };
 
   const updateContact = (updatedContact) => {
-    setContacts(contacts.map(contact => 
+    setContacts(contacts.map(contact =>
       contact.id === updatedContact.id ? updatedContact : contact
     ));
+  };
+
+  // Function to delete a contact
+  const deleteContact = (contactId) => {
+    setContacts(contacts.filter(contact => contact.id !== contactId));
   };
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -33,14 +38,16 @@ function App() {
     contact.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  let lastElement = contacts[contacts.length - 1];
+
   return (
     <div className="App">
       <Header setSearchQuery={setSearchQuery} />
       <div className="mt-4">
-        <AddContact addContact={addContact} contactLength={contactLength} />
+        <AddContact addContact={addContact} contactLength={contactLength} lastElement={lastElement} />
       </div>
       <div className="mt-4">
-        <ContactList contacts={filteredContacts} updateContact={updateContact} />
+        <ContactList contacts={filteredContacts} updateContact={updateContact} deleteContact={deleteContact}/>
       </div>
     </div>
   );
