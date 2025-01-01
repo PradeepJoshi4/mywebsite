@@ -3,6 +3,7 @@ import Header from './component/Header';
 import AddContact from './component/AddContact';
 import ContactList from './component/ContactList';
 import React, { useState } from 'react';
+import Footer from './component/Footer';
 
 function App() {
   // State to store contacts
@@ -46,8 +47,11 @@ function App() {
       <div className="mt-4">
         <AddContact addContact={addContact} contactLength={contactLength} lastElement={lastElement} />
       </div>
-      <div className="mt-4">
+      <div className="mt-2">
         <ContactList contacts={filteredContacts} updateContact={updateContact} deleteContact={deleteContact}/>
+      </div>
+      <div className="mt-4">
+        <Footer/>
       </div>
     </div>
   );
