@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import EditandDelete from './ModalForEditandUser/EditandDelete';
 
-const ContactList = ({ contacts, updateContact }) => {
+const ContactList = ({ contacts, updateContact,deleteContact }) => {
     const [showModal, setShowModal] = useState(false);
     const [contactData, setContactData] = useState(null);
 
@@ -42,6 +42,7 @@ const ContactList = ({ contacts, updateContact }) => {
                 contactData={contactData}
                 setShowModal={setShowModal}
                 updateContact={updateContact}
+                deleteContact={deleteContact}
             />}
         </>
     );
