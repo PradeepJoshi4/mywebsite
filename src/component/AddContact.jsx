@@ -38,27 +38,27 @@ const AddContact = ({ addContact,lastElement }) => {
                 <div className="col-12 col-sm-8 col-md-10">
                     <form onSubmit={handleSubmit}>
                         <div className="row">
-                            <div className="col-12 col-md-5">
+                            <div className="col-12 col-md-5 mb-3">
                                 <input
                                     type="text"
                                     className="form-control form-control-sm"
-                                    placeholder="Name"
+                                    placeholder="Your name"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                     aria-label="Name"
                                 />
                             </div>
-                            <div className="col-12 col-md-5">
+                            <div className="col-12 col-md-5 mb-3">
                                 <input
                                     type="email"
                                     className="form-control form-control-sm"
-                                    placeholder="Email"
+                                    placeholder="example@gmail.com"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     aria-describedby="emailHelp"
                                 />
                             </div>
-                            <div className="col-12 col-md-2 d-flex justify-content-center align-items-center">
+                            <div className="col-12 col-md-2 d-flex justify-content-center align-items-center mb-3">
                                 <button className="btn btn-primary btn-sm" type="submit">Add</button>
                             </div>
                         </div>

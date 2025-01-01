@@ -29,7 +29,7 @@ const EditandDelete = ({ contactData, setShowModal, updateContact,deleteContact 
 
 
     return (
-        <div className="modal fade show" id="editModal" tabIndex="-1" aria-labelledby="exampleModalLabel" style={{ display: 'block', animation: 'fadeIn 0.5s ease-in-out' }} aria-hidden="true">
+        <div className="modal fade show" id="editModal" tabIndex="-1" aria-labelledby="exampleModalLabel" style={{ display: 'block', animation: 'fadeIn 1s ease-in-out' }} aria-hidden="true">
             <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content" style={{ backgroundColor: '#f9f9f9', color: '#333' }}>
                     <div className="modal-header" style={{ borderBottom: '1px solid #ccc' }}>
@@ -39,7 +39,7 @@ const EditandDelete = ({ contactData, setShowModal, updateContact,deleteContact 
                     <div className="modal-body">
                         <form>
                             <div className="mb-3">
-                                <label htmlFor="contactName" className="form-label">Name</label>
+                                <label htmlFor="contactName" className="form-label" style={{display:"flex", fontWeight:"bold"}}>Name</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -51,7 +51,7 @@ const EditandDelete = ({ contactData, setShowModal, updateContact,deleteContact 
                                 />
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="contactEmail" className="form-label">Email</label>
+                                <label htmlFor="contactEmail" className="form-label" style={{display:"flex", fontWeight:"bold"}}>Email</label>
                                 <input
                                     type="email"
                                     className="form-control"
@@ -65,9 +65,8 @@ const EditandDelete = ({ contactData, setShowModal, updateContact,deleteContact 
                         </form>
                     </div>
                     <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" onClick={handleClose}>Close</button>
-                        <button type="button" className="btn btn-primary" onClick={handleSave}>Save changes</button>
-                        <button type="button" className="btn btn-primary" onClick={handleDelete}>Save changes</button>
+                        <button type="button" className="btn  btn-outline-success" onClick={handleSave}>Save</button>
+                        <button type="button" class="btn btn-outline-danger"  onClick={handleDelete}>Delete</button>
                     </div>
                 </div>
             </div>

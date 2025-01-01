@@ -13,8 +13,8 @@ const ContactList = ({ contacts, updateContact,deleteContact }) => {
     return (
         <>
             <div className="container">
-                <h2 className="my-4 text-center">Contact List</h2>
-                <table className="table table-bordered">
+                <h5 className="my-2 text-start">Contacts</h5>
+                <table className="table table-bordered table-dark table-hover">
                     <thead>
                         <tr>
                             <th>ID</th>
